@@ -12,11 +12,21 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-8 offset-md-2">
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if(session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h2>Students</h2>
-                    <a href="{{ route('student_create') }}" class="btn btn-success">Add Student</a>
+                    <h2 class="text-success">Student List</h2>
+                    <a href="{{ route('student_create') }}" class="btn btn-outline-success">Add Student</a>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit nobis non quos repellendus sint?</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi delectus, maxime molestiae quis vitae?</p>
 
                 <!-- Student List -->
                 <div class="list-group">
